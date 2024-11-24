@@ -16,8 +16,22 @@
 .navbar-brand {
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: #33cc99;
   text-decoration: none;
+  animation: fadeColors 3s infinite;
+
+  /* Keyframes for color fading */
+  @keyframes fadeColors {
+    0% {
+      color: #33cc99;
+    }
+    50% {
+      color: #3399ff;
+    }
+    100% {
+      color: #33cc99;
+    }
+  }
 }
 
 .navbar-menu {

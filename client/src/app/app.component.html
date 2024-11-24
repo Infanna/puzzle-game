@@ -1,13 +1,13 @@
 <nav class="navbar">
   <div class="navbar-container">
-    <a class="navbar-brand" routerLink="/">Q puzzle game</a>
+    <a class="navbar-brand">Q puzzle game</a>
     <ul class="navbar-menu">
       <ng-container *ngFor="let page of pages; index as index">
         <li>
           <a
             (click)="navigatePage(page)"
             [ngClass]="{ active: activePage === page }"
-            >@if (page === '') { Home } @else { Game {{ index }} }</a
+            >{{ displayGameTitle (page) }}</a
           >
         </li>
       </ng-container>

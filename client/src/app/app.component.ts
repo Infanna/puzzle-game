@@ -21,4 +21,20 @@ export class AppComponent {
     this.activePage = page;
     this.router.navigate([page]);
   }
+
+  displayGameTitle(page: string) {
+    if (page === '') {
+      return 'Home';
+    }
+    if (page === this.firstGamePage) {
+      return 'Find me';
+    }
+    if (page === this.secondGamePage) {
+      return 'Can you see me?';
+    }
+    if (page === this.thirdGamePage) {
+      return 'Where am i?';
+    }
+    return 'Game';
+  }
 }

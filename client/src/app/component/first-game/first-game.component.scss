@@ -9,7 +9,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(13, 1fr); /* 13 columns in each row */
-  gap: 10px; /* Spacing between items */
+  gap: 10px;
 }
 
 .grid-item {
@@ -23,4 +23,16 @@
   font-weight: bold;
   height: 50px;
   width: 30px;
+}
+
+.row {
+  display: flex; /* Enable Flexbox */
+  flex-wrap: wrap; /* Allow items to wrap onto the next row */
+  margin-right: -15px; /* Remove right padding/gap */
+  margin-left: -15px; /* Remove left padding/gap */
+}
+
+.row > * {
+  padding-right: 15px; /* Add spacing inside each column */
+  padding-left: 15px; /* Add spacing inside each column */
 }
