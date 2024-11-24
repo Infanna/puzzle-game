@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { puzzleConstants } from './model/puzzle.constant';
 
@@ -7,7 +7,7 @@ import { puzzleConstants } from './model/puzzle.constant';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'client';
   activePage = '';
   firstGamePage = puzzleConstants.GAME_1;
@@ -17,8 +17,14 @@ export class AppComponent {
 
   constructor(private readonly router: Router) {}
 
+  ngOnInit(): void {
+    this.activePage = sessionStorage.getItem('activePage') || '';
+    this.navigatePage(this.activePage);
+  }
+
   navigatePage(page: string) {
     this.activePage = page;
+    sessionStorage.setItem('activePage', page);
     this.router.navigate([page]);
   }
 
