@@ -1,40 +1,16 @@
 <nav class="navbar">
   <div class="navbar-container">
-    <a class="navbar-brand" routerLink="/">My Game</a>
+    <a class="navbar-brand" routerLink="/">Q puzzle game</a>
     <ul class="navbar-menu">
-      <li>
-        <a (click)="navigatePage('')" [ngClass]="{ active: activePage === '' }"
-          >Home</a
-        >
-      </li>
-      <li>
-        <a
-          (click)="navigatePage(firstGamePage)"
-          [ngClass]="{ active: activePage === firstGamePage }"
-          >Game 1</a
-        >
-      </li>
-      <li>
-        <a
-          (click)="navigatePage(secondGamePage)"
-          [ngClass]="{ active: activePage === secondGamePage }"
-          >Game 2</a
-        >
-      </li>
-      <li>
-        <a
-          (click)="navigatePage(thirdGamePage)"
-          [ngClass]="{ active: activePage === thirdGamePage }"
-          >Game 3</a
-        >
-      </li>
-      <li>
-        <a
-          (click)="navigatePage(fourthGamePage)"
-          [ngClass]="{ active: activePage === fourthGamePage }"
-          >Game 4</a
-        >
-      </li>
+      <ng-container *ngFor="let page of pages; index as index">
+        <li>
+          <a
+            (click)="navigatePage(page)"
+            [ngClass]="{ active: activePage === page }"
+            >@if (page === '') { Home } @else { Game {{ index }} }</a
+          >
+        </li>
+      </ng-container>
     </ul>
   </div>
 </nav>

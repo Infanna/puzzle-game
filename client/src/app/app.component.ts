@@ -13,7 +13,7 @@ export class AppComponent {
   firstGamePage = puzzleConstants.GAME_1;
   secondGamePage = puzzleConstants.GAME_2;
   thirdGamePage = puzzleConstants.GAME_3;
-  fourthGamePage = puzzleConstants.GAME_4;
+  pages = ['', this.firstGamePage, this.secondGamePage, this.thirdGamePage];
 
   constructor(private readonly router: Router) {}
 

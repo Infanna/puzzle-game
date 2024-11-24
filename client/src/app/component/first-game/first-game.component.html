@@ -1,25 +1,9 @@
-<div class="game-container">
-  <h2>Game 1: Score Tracking</h2>
-  <p>Play the game and record your score below:</p>
-
-  <!-- ฟอร์มบันทึกคะแนน -->
-  <form (ngSubmit)="saveScore()">
-    <label for="playerName">Player Name:</label>
-    <input type="text" id="playerName" name="playerName" required />
-    <br />
-    <label for="score">Score:</label>
-    <input type="number" id="score" name="score" required />
-    <br />
-    <button type="submit">Save Score</button>
-  </form>
-
-  <!-- แสดงคะแนนที่บันทึก -->
-  <!-- <div class="score-list" *ngIf="scores.length > 0">
-    <h3>Saved Scores:</h3>
-    <ul>
-      <li *ngFor="let score of scores">
-        {{ score.playerName }}: {{ score.score }}
-      </li>
-    </ul>
-  </div> -->
+<div class="container">
+  <div class="grid-container">
+    <ng-container *ngFor="let row of rows; let i = index">
+      <div class="grid-item" *ngFor="let column of columns; let j = index">
+        {{ convertAsciiToLetter(i, j) }}
+      </div>
+    </ng-container>
+  </div>
 </div>
