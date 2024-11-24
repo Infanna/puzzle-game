@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './component/home/home.component';
 import { FirstGameComponent } from './component/first-game/first-game.component';
 import { AppRoutingModule } from './app-routes.module';
+import { SecondGameComponent } from './component/second-game/second-game.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FirstGameComponent],
+  declarations: [AppComponent, HomeComponent, FirstGameComponent, SecondGameComponent],
   imports: [CommonModule, BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
