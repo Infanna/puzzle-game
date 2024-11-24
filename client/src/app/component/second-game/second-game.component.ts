@@ -14,6 +14,7 @@ import { delay, Observable } from 'rxjs';
 })
 export class SecondGameComponent implements OnInit {
   typeAnswer = 'INFP';
+  answer = 9;
   grid: string[] = [
     'INTJ=5',
     'ENTP=1',
@@ -28,19 +29,40 @@ export class SecondGameComponent implements OnInit {
   constructor(private http: HttpClient, private cf: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.getData().subscribe((data: { id: number; number: number }) => {
+    for (let i = 0; i < this.grid.length; i++) {
+      const data = this.grid[i].split('=');
+      this.getData(data[0], data[1] === '-1' ? '9' : data[1]).subscribe(
+        (data: { id: number; typeInfo: string; number: number }) => {
+          if (data.number === -1) {
+            const index = this.grid.indexOf(this.typeAnswer + '=-1');
+            this.grid[index] = `${this.typeAnswer}=${this.answer}`;
+            this.cf.detectChanges();
+          }
+        }
+      );
+    }
+    setTimeout(() => {
       const index = this.grid.indexOf(this.typeAnswer + '=-1');
-      this.grid[index] = `${this.typeAnswer}=${data.number}`;
+      this.grid[index] = `${this.typeAnswer}=${this.answer}`;
       this.cf.detectChanges();
-    });
+    }, 15 * 1000);
   }
 
-  getData(): Observable<{ id: number; number: number }> {
-    let url = 'https://jsonplaceholder.typicode.com/posts';
+  getData(
+    typeInfo: string,
+    input: string
+  ): Observable<{ id: number; typeInfo: string; number: number }> {
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    const inputNumber = Number(input);
     return this.http
-      .post<{ id: number; number: number }>(url, {
-        number: 9,
+      .post<{ id: number; typeInfo: string; number: number }>(url, {
+        type: typeInfo,
+        number: inputNumber,
+        describe:
+          typeInfo === this.typeAnswer
+            ? `${this.typeAnswer} data is currently in high demand. Please wait a moment.`
+            : 'Success',
       })
-      .pipe(delay(15 * 1000));
+      .pipe(delay(inputNumber === -1 ? 15 * 1000 : 0));
   }
 }
