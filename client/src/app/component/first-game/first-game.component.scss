@@ -6,17 +6,64 @@
   padding: 20px;
 }
 
+.quiz {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  animation: fadeColors 3s infinite;
+
+  @keyframes fadeColors {
+    0% {
+      color: #33cc99;
+    }
+    50% {
+      color: #3399ff;
+    }
+    100% {
+      color: #33cc99;
+    }
+  }
+}
+
+.background-title {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 90%;
+  margin: 50px auto;
+}
+
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(13, 1fr); /* 13 columns in each row */
+  grid-template-columns: repeat(10, 1fr); /* 13 columns in each row */
   gap: 10px;
+}
+
+@media (max-width: 860px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
 }
 
 .grid-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: gray;
   border: 1px solid #ccc;
   padding: 10px;
   font-size: 14px;
@@ -26,13 +73,13 @@
 }
 
 .row {
-  display: flex; /* Enable Flexbox */
-  flex-wrap: wrap; /* Allow items to wrap onto the next row */
-  margin-right: -15px; /* Remove right padding/gap */
-  margin-left: -15px; /* Remove left padding/gap */
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .row > * {
-  padding-right: 15px; /* Add spacing inside each column */
-  padding-left: 15px; /* Add spacing inside each column */
+  padding-right: 15px;
+  padding-left: 15px;
 }

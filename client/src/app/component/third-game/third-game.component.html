@@ -1,9 +1,11 @@
 <div class="background-title">
   <div class="container">
-    <h1>Find me</h1>
+    <h1>Where am i?</h1>
   </div>
   <div class="quiz">
-    <div class="row"><h3>Quiz: TV = ?</h3></div>
+    <div class="row">
+      <h3>Quiz: {{ typeAnswer }} = ?</h3>
+    </div>
   </div>
 
   <div class="quiz"></div>
@@ -13,5 +15,8 @@
         {{ item }}
       </div>
     </div>
+  </div>
+  <div class="container">
+    <div class="small-text">III={{ answer }}</div>
   </div>
 </div>

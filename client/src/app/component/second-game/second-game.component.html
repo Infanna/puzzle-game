@@ -1,1 +1,19 @@
-<p>second-game works!</p>
+<div class="background-title">
+  <div class="container">
+    <h1>Can you see me?</h1>
+  </div>
+  <div class="quiz">
+    <div class="row">
+      <h3>Quiz: {{ typeAnswer }} = ?</h3>
+    </div>
+  </div>
+
+  <div class="quiz"></div>
+  <div class="container">
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let item of this.grid">
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</div>

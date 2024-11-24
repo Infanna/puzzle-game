@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './first-game.component.scss',
 })
 export class FirstGameComponent implements OnInit {
-  rows: number[] = [];
-  columns: number[] = [];
+  grid: string[] = [];
 
   ngOnInit() {
-    this.rows = Array(26).fill(0);
-    this.columns = Array(26).fill(0);
+    for (let i = 0; i < 26; i++) {
+      for (let j = 0; j < 26; j++) {
+        this.grid.push(this.convertAsciiToLetter(i, j));
+      }
+    }
   }
 
   convertAsciiToLetter(row: number, column: number): string {

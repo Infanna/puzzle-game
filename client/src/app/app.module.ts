@@ -7,9 +7,16 @@ import { HomeComponent } from './component/home/home.component';
 import { FirstGameComponent } from './component/first-game/first-game.component';
 import { AppRoutingModule } from './app-routes.module';
 import { SecondGameComponent } from './component/second-game/second-game.component';
+import { ThirdGameComponent } from './component/third-game/third-game.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FirstGameComponent, SecondGameComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    FirstGameComponent,
+    SecondGameComponent,
+    ThirdGameComponent,
+  ],
   imports: [CommonModule, BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,6 +5,8 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-width: 500px;
 }
 
 .navbar-container {
@@ -16,22 +18,10 @@
 .navbar-brand {
   font-size: 20px;
   font-weight: bold;
-  color: #33cc99;
   text-decoration: none;
-  animation: fadeColors 3s infinite;
-
-  /* Keyframes for color fading */
-  @keyframes fadeColors {
-    0% {
-      color: #33cc99;
-    }
-    50% {
-      color: #3399ff;
-    }
-    100% {
-      color: #33cc99;
-    }
-  }
+  background: linear-gradient(90deg, #33cc99, #3399ff); /* Fading color */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
 }
 
 .navbar-menu {
