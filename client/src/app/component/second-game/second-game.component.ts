@@ -20,9 +20,9 @@ export class SecondGameComponent implements OnInit {
     'ENTP=1',
     'INFJ=-5',
     'ENFJ=0',
+    'INFP=-1',
     'ISTJ=6',
     'ISFJ=16',
-    'INFP=-1',
     'ESTJ=3',
     'ESFJ=-10',
   ];

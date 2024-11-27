@@ -43,6 +43,28 @@
   gap: 10px;
 }
 
+@media (max-width: 860px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 13 columns in each row */
+    gap: 10px;
+  }
+
+  .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 120px;
+    width: 120px;
+  }
+  
+}
+
 .grid-item {
   display: flex;
   justify-content: center;
@@ -50,11 +72,13 @@
   background-color: gray;
   border: 1px solid #ccc;
   padding: 10px;
-  font-size: 14px;
+  font-size: 28px;
   font-weight: bold;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 }
+
+
 
 .row {
   display: flex;
